@@ -1,0 +1,11 @@
+
+AWSTemplateFormatVersion: "2010-09-09" 
+Transform: AWS::Serverless-2016-10-31 
+Resources: # resources we want sam to spin up
+  DynamoBooksTable: 
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: books
+      PrimaryKey:
+        Name: id # setting primary key of each item in db as id
+        Type: String
