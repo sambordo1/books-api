@@ -5,7 +5,7 @@ Resources: # resources we want sam to spin up
   DynamoBooksTable: 
     Type: AWS::Serverless::SimpleTable
     Properties:
-      TableName: books
+      TableName: bookstore
       PrimaryKey:
         Name: id # this sets primary key of each item in db as id
         Type: String
