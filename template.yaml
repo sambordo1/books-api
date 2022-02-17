@@ -3,9 +3,22 @@ AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31 
 Resources: # resources we want sam to spin up
   DynamoBooksTable: 
-    Type: AWS::Serverless::SimpleTable
+    Type: AWS::Serverless::SimpleTable # defining this resource as a simple dynamo db table
     Properties:
       TableName: bookstore
       PrimaryKey:
         Name: id # this sets primary key of each item in db as id
         Type: String
+   CreateBookFunction: # defining create-book function and API
+    Type: AWS::Serverless::Function # defining this resource as a function
+    Properties:
+      CodeUri: src/ # specifying code location
+      Handler: create-book.handler # code file name and function
+      Policies: AmazonDynamoDBFullAccess # giving function full access to DynamoDB
+      Runtime: nodejs12.x
+      Events:
+        CreateBook: # defining api resource to call function
+          Type: Api
+          Properties:
+            Path: /books # setting api path and method to call function
+            Method: post
