@@ -1,5 +1,5 @@
 const AWS = require("aws-sdk");
-//const crypto = require("crypto");
+const crypto = require("crypto");
 
 // Generate unique id 
 function generateUUID() {
