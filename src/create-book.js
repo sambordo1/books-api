@@ -1,9 +1,9 @@
 const AWS = require("aws-sdk");
-const crypto = require("crypto");
+//const crypto = require("crypto");
 
 // Generate unique id with no external dependencies
-const generateUUID = () => crypto.randomBytes(16).toString("hex");
-
+//const generateUUID = () => crypto.randomBytes(16).toString("hex");
+const generateUUID = () => Math.random(100);
 // Initialising the DynamoDB SDK
 const documentClient = new AWS.DynamoDB.DocumentClient();
 
