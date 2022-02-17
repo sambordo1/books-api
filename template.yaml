@@ -7,5 +7,5 @@ Resources: # resources we want sam to spin up
     Properties:
       TableName: books
       PrimaryKey:
-        Name: id # setting primary key of each item in db as id
+        Name: id # this sets primary key of each item in db as id
         Type: String
