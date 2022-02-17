@@ -1,10 +1,10 @@
 const AWS = require("aws-sdk");
-const crypto = require("crypto");
+//const crypto = require("crypto");
 
 // Generate unique id 
-function generateUUID() {
-    return crypto.randomBytes(16).toString("hex");
-}
+// function generateUUID() {
+//     return crypto.randomBytes(16).toString("hex");
+// }
 
 // Initialising the DynamoDB SDK
 const documentClient = new AWS.DynamoDB.DocumentClient();
@@ -14,7 +14,7 @@ exports.handler = async event => {
   const params = {
     TableName: "books", // The name of your DynamoDB table
     Item: { // Creating an Item with a unique id and with the passed title
-      id: generateUUID(),
+      id: Math.random(100).toString(),
       title: title
     }
   };
