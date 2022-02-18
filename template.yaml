@@ -21,3 +21,16 @@ Resources: # resources we want sam to spin up
           Properties:
             Path: /books # setting api path and method to call function
             Method: post
+  GetBooksFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: get-book.handler
+      Policies: AmazonDynamoDBFullAccess
+      Runtime: nodejs8.10
+      Events:
+        GetBooks:
+          Type: Api
+          Properties:
+            Path: /books
+            Method: get
