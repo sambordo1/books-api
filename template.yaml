@@ -14,7 +14,7 @@ Resources:
       CodeUri: src/
       Handler: create-book.handler
       Policies: AmazonDynamoDBFullAccess
-      Runtime: nodejs12.x
+      Runtime: nodejs16.x
       Events:
         CreateBook:
           Type: Api
@@ -27,7 +27,7 @@ Resources:
       CodeUri: src/
       Handler: get-books.handler
       Policies: AmazonDynamoDBFullAccess
-      Runtime: nodejs8.10
+      Runtime: nodejs16.14
       Events:
         GetBooks:
           Type: Api
