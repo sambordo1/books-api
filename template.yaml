@@ -25,7 +25,7 @@ Resources: # resources we want sam to spin up
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: src/
-      Handler: get-book.handler
+      Handler: get-books.handler
       Policies: AmazonDynamoDBFullAccess
       Runtime: nodejs8.10
       Events:
